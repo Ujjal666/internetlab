@@ -1,0 +1,58 @@
+/* frontend/src/PageBreak.css */
+
+.page-break-container {
+  margin: 24px 0;
+  user-select: none;
+}
+
+.page-break-line {
+  position: relative;
+  border-top: 2px dashed #9ca3af;
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-break-label {
+  background: white;
+  padding: 4px 12px;
+  color: #6b7280;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.page-break-remove {
+  position: absolute;
+  right: 0;
+  background: #fee2e2;
+  color: #dc2626;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.page-break-remove:hover {
+  background: #fecaca;
+}
+
+/* Print style */
+@media print {
+  .page-break-container {
+    page-break-after: always;
+    margin: 0;
+  }
+
+  .page-break-line {
+    display: none;
+  }
+}
