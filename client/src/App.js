@@ -188,7 +188,7 @@ useEffect(() => {
   const createRoom = async () => {
     try {
       const currentUser = getCurrentUser();
-      const response = await fetch(`${SOCKET_URL}/api/rooms/create`, {
+      const response = await fetch(`/api/rooms/create`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId: currentUser.id, userName: currentUser.name })
@@ -208,7 +208,7 @@ useEffect(() => {
   const joinRoom = async () => {
     if (!roomCode.trim()) return alert('Please enter a room code');
     try {
-      const response = await fetch(`${SOCKET_URL}/api/rooms/${roomCode}`);
+      const response = await fetch(`/api/rooms/${roomCode}`);
       const data = await response.json();
       if (data.success) {
         setCurrentRoom(data.room);
