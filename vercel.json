@@ -11,14 +11,18 @@
       "config": { "distDir": "build" }
     }
   ],
-  "rewrites": [
-    {
-      "source": "/api/:path*",
-      "destination": "/server/server.js"
-    },
-    {
-      "source": "/((?!api).*)",
-      "destination": "/client/index.html"
-    }
-  ]
+ "rewrites": [
+  {
+    "source": "/api/:path*",
+    "destination": "/server/server.js"
+  },
+  {
+    "source": "/static/:path*",
+    "destination": "/client/static/:path*"
+  },
+  {
+    "source": "/((?!api).*)",
+    "destination": "/client/index.html"
+  }
+]
 }
